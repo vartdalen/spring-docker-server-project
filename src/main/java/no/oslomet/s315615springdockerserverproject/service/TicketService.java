@@ -12,19 +12,19 @@ public class TicketService {
     @Autowired
     private TicketRepository ticketRepository;
 
-    public List<Ticket> getAllTickets(){
+    public List<Ticket> getAllTickets() {
         return ticketRepository.findAll();
     }
 
-    public Ticket getTicketById(long id){
+    public Ticket getTicketById(long id) {
         return ticketRepository.findById(id).get();
     }
 
-    public Ticket saveTicket(Ticket ticket){
+    public Ticket saveTicket(Ticket ticket) {
         return ticketRepository.save(ticket);
     }
 
-    public void deleteTicketById(long id){
+    public void deleteTicketById(long id) {
         ticketRepository.deleteById(id);
     }
 }

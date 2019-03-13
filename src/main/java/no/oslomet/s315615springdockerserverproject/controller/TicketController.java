@@ -14,21 +14,21 @@ public class TicketController {
     TicketService ticketService;
 
     @GetMapping("/tickets")
-    public List<Ticket> getAllTickets(){ return ticketService.getAllTickets(); }
+    public List<Ticket> getAllTickets() { return ticketService.getAllTickets(); }
 
     @GetMapping("/tickets/{id}")
-    public Ticket getTicketById(@PathVariable long id){ return ticketService.getTicketById(id); }
+    public Ticket getTicketById(@PathVariable long id) { return ticketService.getTicketById(id); }
 
     @DeleteMapping("/tickets/{id}")
-    public void deleteTicketById(@PathVariable long id){
+    public void deleteTicketById(@PathVariable long id) {
          ticketService.deleteTicketById(id);
     }
 
     @PostMapping("/tickets")
-    public Ticket saveTicket( @RequestBody  Ticket newTicket){ return ticketService.saveTicket(newTicket); }
+    public Ticket saveTicket( @RequestBody  Ticket newTicket) { return ticketService.saveTicket(newTicket); }
 
     @PutMapping("/tickets/{id}")
-    public Ticket updateTicket(@PathVariable long id,  @RequestBody  Ticket newTicket){
+    public Ticket updateTicket(@PathVariable long id,  @RequestBody  Ticket newTicket) {
         newTicket.setId(id);
         return ticketService.saveTicket(newTicket);
     }
