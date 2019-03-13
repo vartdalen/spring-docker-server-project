@@ -1,9 +1,6 @@
 package no.oslomet.s315615springdockerserverproject.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -24,6 +21,8 @@ public class User {
     private String password;
     private String role;
 
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy="user", cascade=CascadeType.REMOVE)
     private Set<Ticket> ticket;
 
