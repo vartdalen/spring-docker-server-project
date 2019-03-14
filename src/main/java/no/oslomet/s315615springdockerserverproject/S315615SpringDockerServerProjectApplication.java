@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Date;
 
@@ -18,6 +19,8 @@ public class S315615SpringDockerServerProjectApplication implements CommandLineR
     UserRepository userRepository;
     @Autowired
     TicketRepository ticketRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(S315615SpringDockerServerProjectApplication.class, args);
@@ -25,7 +28,9 @@ public class S315615SpringDockerServerProjectApplication implements CommandLineR
 
     @Override
     public void run(String... args) throws Exception {
-        User user = new User("testname", "testlastname", "test@email.test", "testpassword");
+        User user = new User("testname", "testlastname", "test@test.test", "test");
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole("ADMIN");
         userRepository.save(user);
         ticketRepository.save(new Ticket(new Date(System.currentTimeMillis()), "testfilm", "testcinema", user));
     }

@@ -29,7 +29,7 @@ public class UserController {
             try {
                 return userService.getUserByEmail(id);
             } catch (NoSuchElementException e2) {
-                return new User();
+                return null;
             }
         }
     }
