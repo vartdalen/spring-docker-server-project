@@ -3,7 +3,6 @@ package no.oslomet.s315615springdockerserverproject.service;
 import no.oslomet.s315615springdockerserverproject.model.User;
 import no.oslomet.s315615springdockerserverproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -8,12 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Date;
 
 @SpringBootApplication
 public class S315615SpringDockerServerProjectApplication implements CommandLineRunner {
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Autowired
     UserRepository userRepository;
@@ -26,6 +33,7 @@ public class S315615SpringDockerServerProjectApplication implements CommandLineR
         SpringApplication.run(S315615SpringDockerServerProjectApplication.class, args);
     }
 
+    //seeding
     @Override
     public void run(String... args) throws Exception {
         User user = new User("testname", "testlastname", "test@test.test", "test");

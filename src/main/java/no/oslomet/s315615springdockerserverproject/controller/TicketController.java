@@ -28,7 +28,7 @@ public class TicketController {
     public Ticket saveTicket( @RequestBody  Ticket newTicket) { return ticketService.saveTicket(newTicket); }
 
     @PutMapping("/tickets/{id}")
-    public Ticket updateTicket(@PathVariable long id,  @RequestBody  Ticket newTicket) {
+    public Ticket updateTicket(@PathVariable long id, @RequestBody Ticket newTicket) {
         newTicket.setId(id);
         return ticketService.saveTicket(newTicket);
     }
