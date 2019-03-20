@@ -35,7 +35,7 @@ public class S315615SpringDockerServerProjectApplication implements CommandLineR
 
     //seeding
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         User user = new User("testname", "testlastname", "test@test.test", "test");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("ADMIN");

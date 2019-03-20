@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -24,6 +25,7 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name="idUser")
+    @Nullable
     private User user;
 
     public Ticket(Date date, String film, String cinema, User user) {
