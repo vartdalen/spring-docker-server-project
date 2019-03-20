@@ -1,6 +1,5 @@
 package no.oslomet.s315615springdockerserverproject.service;
 
-import com.sun.deploy.security.UserDeclinedException;
 import no.oslomet.s315615springdockerserverproject.exception.UserExistsException;
 import no.oslomet.s315615springdockerserverproject.model.User;
 import no.oslomet.s315615springdockerserverproject.repository.UserRepository;
