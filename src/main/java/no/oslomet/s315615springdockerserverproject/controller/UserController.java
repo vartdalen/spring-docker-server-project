@@ -1,5 +1,6 @@
 package no.oslomet.s315615springdockerserverproject.controller;
 
+import no.oslomet.s315615springdockerserverproject.exception.UserExistsException;
 import no.oslomet.s315615springdockerserverproject.model.User;
 import no.oslomet.s315615springdockerserverproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,9 @@ public class UserController {
 
     @PostMapping("/users")
     @ResponseBody
-    public ResponseEntity<User> saveUser(@RequestBody  User newUser) { return new ResponseEntity<>(userService.saveUser(newUser), HttpStatus.OK); }
+    public ResponseEntity<User> saveUser(@RequestBody  User newUser) {
+        return new ResponseEntity<>(userService.saveUser(newUser), HttpStatus.OK);
+    }
 
     @PutMapping("/users/{id}")
     public User updateUser(@PathVariable long id,  @RequestBody  User newUser) {
