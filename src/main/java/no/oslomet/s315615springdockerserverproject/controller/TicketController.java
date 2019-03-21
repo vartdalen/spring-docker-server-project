@@ -3,7 +3,6 @@ package no.oslomet.s315615springdockerserverproject.controller;
 import no.oslomet.s315615springdockerserverproject.model.Ticket;
 import no.oslomet.s315615springdockerserverproject.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
