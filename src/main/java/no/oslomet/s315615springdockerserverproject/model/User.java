@@ -32,4 +32,9 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
+    public void setRole(String role) { this.role = role; }
 }
